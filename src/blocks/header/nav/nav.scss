@@ -1,13 +1,15 @@
 .nav{
-  margin-left: 55px;
-  width: 296px;
   &__item{
     text-decoration: none;
+    margin-left:32px;
+    &:first-child{
+      margin-left: 17px;
+    }
   }
   &__text{
     color: #333;
     font-weight: bold;
-    font-size: 16.8px;
+    font-size: 15.2px;
     opacity: 0.6;
     &:hover{
       opacity: 1;
