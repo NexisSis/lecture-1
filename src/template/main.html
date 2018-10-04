@@ -1,53 +1,58 @@
-<div class="main main_container">
-    <h1>Лента событий</h1>
-    <div class="card card_big">
+<div class="main main_container grid">
+    <h1 class="grid-c-12">Лента событий</h1>
+    <div class="card card_big grid-c-8 grid-r-3">
         <div class="icon-close"></div>
-        <div class="card__icon icon-everyday"></div>
-        <div class="card__title">Еженедельный отчет по расходам ресурсов</div>
-        <div class="flex flex-jc-sb">
+        <div class="flex card_m-t">
+            <div class="card__icon icon-everyday"></div>
+            <div class="card__title">Еженедельный отчет по расходам ресурсов</div>
+        </div>
+        <div class="flex flex-jc-sb mt-26">
             <div class="card__text">Сенсоры потребления</div>
             <div class="card__text">19:00, Сегодня</div>
         </div>
-        <div class="card__decription">
+        <div class="card__decription card__decription_b">
             Так держать! За последнюю неделю вы потратили
             на 10% меньше ресурсов, чем неделей ранее.
         </div>
-        <div class="card__image"></div>
+        <img class="card__image" src="img/richdata.png" alt="profffesional graph">
+        <div class="icon-next"></div>
     </div>
-    <div class="card card_small">
+    <div class="card card_small grid-c-4">
         <div class="icon-close"></div>
-        <div class="card__icon icon-odoor"></div>
-        <div class="card__title">Дверь открыта</div>
-        <div class="card__text">Сенсор входной двери</div>
-        <div class="flex">
-            <div class="card__text">18:50, Сегодня</div>
-            <div class="icon-next"></div>
+        <div class="flex card_small-text-position">
+            <div class="card__icon-2 icon-odoor"></div>
+            <div class="card__title">Дверь открыта</div>
         </div>
+        <div class="card__text mt-24">Сенсор входной двери</div>
+        <div class="card__text mt-18">18:50, Сегодня</div>
+        <div class="icon-next"></div>
     </div>
-    <div class="card card_small">
+    <div class="card card_small grid-c-4">
         <div class="icon-close"></div>
-        <div class="card__icon icon-cleaner"></div>
-        <div class="card__title">Уборка закончена</div>
-        <div class="card__text">Пылесос</div>
-        <div class="flex">
-            <div class="card__text">18:45, Сегодня</div>
-            <div class="icon-next"></div>
+        <div class="flex card_small-text-position-2">
+            <div class="card__icon-3 icon-cleaner"></div>
+            <div class="card__title">Уборка закончена</div>
         </div>
+        <div class="card__text mt-33">Пылесос</div>
+        <div class="card__text mt-18">18:45, Сегодня</div>
+        <div class="icon-next"></div>
     </div>
-    <div class="card card_small">
+    <div class="card card_small grid-c-4">
         <div class="icon-close"></div>
-        <div class="card__icon icon-router"></div>
-        <div class="card__title">Новый пользователь</div>
-        <div class="card__text">Роутер</div>
         <div class="flex">
-            <div class="card__text">18:45, Сегодня</div>
-            <div class="icon-next"></div>
+            <div class="card__icon-2 icon-router"></div>
+            <div class="card__title">Новый пользователь</div>
         </div>
+        <div class="card__text mt-18">Роутер</div>
+        <div class="card__text mt-18">18:45, Сегодня</div>
+        <div class="icon-next"></div>
     </div>
-    <div class="card card_middle">
+    <div class="card card_middle grid-c-6">
         <div class="icon-close"></div>
-        <div class="card__icon icon-climate"></div>
-        <div class="card__title">Изменен климатический режим</div>
+        <div class="flex">
+            <div class="card__icon icon-climate"></div>
+            <div class="card__title">Изменен климатический режим</div>
+        </div>
         <div class="flex flex-jc-sb">
             <div class="card__text">Сенсор микроклимата</div>
             <div class="card__text">18:30, Сегодня</div>
@@ -59,11 +64,14 @@
             <div class="card__text color_black">Температура: <span class="card__text_strong">24 C</span></div>
             <div class="card__text card__text_m-l color_black">Влажность:  <span class="card__text_strong">80%</span></div>
         </div>
+        <div class="icon-next"></div>
     </div>
-    <div class="card card_red card_middle">
+    <div class="card card_red card_middle grid-c-6">
         <div class="icon-close"></div>
-        <div class="card__icon icon-condition"></div>
-        <div class="card__title">Невозможно включить кондиционер</div>
+        <div class="flex">
+            <div class="card__icon icon-condition"></div>
+            <div class="card__title">Невозможно включить кондиционер</div>
+        </div>
         <div class="flex flex-jc-sb">
             <div class="card__text color_white">Кондиционер</div>
             <div class="card__text color_white">18:21, Сегодня</div>
@@ -73,11 +81,14 @@
                 В комнате открыто окно, закройте его и повторите попытку
             </div>
         </div>
+        <div class="icon-next"></div>
     </div>
-    <div class="card card_middle">
+    <div class="card card_middle grid-c-6">
         <div class="icon-close"></div>
-        <div class="card__icon icon-music"></div>
-        <div class="card__title">Музыка включена</div>
+        <div class="flex">
+            <div class="card__icon icon-music"></div>
+            <div class="card__title">Музыка включена</div>
+        </div>
         <div class="flex flex-jc-sb">
             <div class="card__text ">Яндекс.Станция</div>
             <div class="card__text ">18:16, Сегодня</div>
@@ -105,11 +116,14 @@
                 <div class="player__volume">80%</div>
             </div>
         </div>
+        <div class="icon-next"></div>
     </div>
-    <div class="card card_middle">
+    <div class="card card_middle grid-c-6">
         <div class="icon-close"></div>
-        <div class="card__icon icon-fridge"></div>
-        <div class="card__title">Заканчивается молоко</div>
+        <div class="flex">
+            <div class="card__icon icon-fridge"></div>
+            <div class="card__title">Заканчивается молоко</div>
+        </div>
         <div class="flex flex-jc-sb">
             <div class="card__text">Холодильник</div>
             <div class="card__text">17:23, Сегодня</div>
@@ -121,34 +135,37 @@
             <button class="card__button card__button_yellow">Да</button>
             <button class="card__button">Нет</button>
         </div>
+        <div class="icon-next"></div>
     </div>
-    <div class="card card_small">
+    <div class="card card_small grid-c-1-4">
         <div class="icon-close"></div>
-        <div class="card__icon icon-charge"></div>
-        <div class="card__title">Зарядка завершена</div>
-        <div class="card__text">Оконный сенсор</div>
         <div class="flex">
+            <div class="card__icon icon-charge"></div>
+            <div class="card__title">Зарядка завершена</div>
+        </div>
+        <div class="card__text">Оконный сенсор</div>
             <div class="card__decription">
                 Ура! Устройство «Оконный
                 сенсор» снова в строю!
             </div>
-            <div class="icon-next"></div>
-        </div>
+        <div class="icon-next"></div>
     </div>
-    <div class="card card_small">
+    <div class="card card_small grid-c-1-4">
         <div class="icon-close"></div>
-        <div class="card__icon icon-kettle"></div>
-        <div class="card__title">Вода вскипела</div>
-        <div class="card__text">Чайник</div>
         <div class="flex">
-            <div class="card__text">16:17, Сегодня</div>
-            <div class="icon-next"></div>
+            <div class="card__icon icon-kettle"></div>
+            <div class="card__title">Вода вскипела</div>
         </div>
+        <div class="card__text">Чайник</div>
+        <div class="card__text">16:17, Сегодня</div>
+        <div class="icon-next"></div>
     </div>
-    <div class="card card_red card_big">
+    <div class="card card_red card_big grid-c-8 grid-r-3">
         <div class="icon-close"></div>
-        <div class="card__icon icon-cleaner-2"></div>
-        <div class="card__title">Пылесос застрял</div>
+        <div class="flex">
+            <div class="card__icon icon-cleaner-2"></div>
+            <div class="card__title">Пылесос застрял</div>
+        </div>
         <div class="flex flex-jc-sb">
             <div class="card__text color_white">Сенсор движения</div>
             <div class="card__text color_white">16:17, Сегодня</div>
@@ -161,6 +178,7 @@
             </div>
             <div class="card__image"></div>
         </div>
+        <div class="icon-next"></div>
     </div>
 
 </div>
