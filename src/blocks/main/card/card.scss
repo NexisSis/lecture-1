@@ -4,19 +4,25 @@
   padding:20px;
   position:relative;
   transition:0.5s;
+  // виден красный пиксель при наложении, с этим фиксом всё ок.
+  margin-bottom: -1px;
   &:hover{
     box-shadow: 0 2px 6px 0 rgba(197,186,186,0.50);
     background-color: #F3F3F3;
     cursor:pointer;
   }
   &_red{
-    .icon-close:before,.icon-next:before{
-      color:white;
-    }
     background-color: #DB5341;
     border-radius: 20px 20px 20px 20px;
+    //если fit-content не сработает (ie), display:table сделает аналогичную штуку. (stackoverflow guru :) )
+    height: fit-content;
+    display: table;
+    margin-bottom: -2px;
     &:hover{
       background-color: #DB5341;
+    }
+    .icon-close:before{
+      color:white;
     }
   }
   // Используется вложение класса .card, что бы не отображалась тень во внутренних элементах необходимо её отключить
@@ -34,6 +40,7 @@
     right: 23px;
     opacity: 0;
     transition: 1s;
+    top:19px;
   }
   .icon-next{
     position:absolute;
