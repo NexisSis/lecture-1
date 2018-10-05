@@ -101,5 +101,16 @@
     margin-top: 10px;
     margin-left: 5px;
   }
+  &__button{
+    background: #E5E5E5;
+    border-radius: 8px;
+    border: 0;
+    height: 50px;
+    width: 133px;
+    font-size: 19px;
+    &_yellow{
+      background-color: #FFD93E;
+    }
+  }
 
 }
