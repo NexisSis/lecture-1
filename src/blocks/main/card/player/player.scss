@@ -1,0 +1,52 @@
+.player{
+  &__wrapper{
+    width: 100%;
+  }
+  &__song-line{
+    cursor: pointer;
+    height: 1px;
+    width: 88%;
+    background-color: #979797;
+  }
+  &__value{
+    font-size: 14px;
+    color:#A1A1A1;
+  }
+  &__song-moment{
+    position: absolute;
+    height: 20px;
+    width: 12px;
+    background-color: #D8D8D8;
+    border-radius: 4.5px;
+    margin-left: 10%;
+    cursor: pointer;
+  }
+  .icon-music-prev{
+    background-image: url('../img/player-prev.svg');
+    height: 53px;
+    width: 53px;
+    cursor:pointer;
+  }
+  .icon-music-next{
+    background-image: url('../img/player-prev.svg');
+    height: 53px;
+    width: 53px;
+    transform:rotate(180deg);
+    cursor:pointer;
+  }
+  &__volume-moment{
+    background: #605757;
+    border-radius: 26px;
+    height: 16px;
+    width: 17px;
+    position: absolute;
+    margin-left: 67%;
+    cursor: pointer;
+  }
+  &__volume-line{
+    height: 4px;
+    width: 56%;
+    background-color: rgba(216,216,216,0.30);
+    border-radius: 2px;
+  }
+}
