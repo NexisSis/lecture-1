@@ -4,3 +4,11 @@
     width: 114px;
   }
 }
+
+@media(max-width: 450px){
+  .header{
+    height: 35px;
+    margin-top: 30px;
+  }
+
+}

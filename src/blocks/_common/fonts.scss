@@ -66,3 +66,25 @@
   content: "\e91a";
   color:white;
 }
+.icon-close{
+  position: absolute;
+  right: 23px;
+  opacity: 0;
+  transition: 0.5s;
+  top:19px;
+  cursor:pointer;
+}
+.icon-next{
+  position:absolute;
+  right: 23px;
+  opacity: 0;
+  transition: 0.5s;
+  bottom: 19px;
+  cursor: pointer;
+}
+
+@media(max-width: 450px){
+  .icon-close,.icon-next{
+    display: none!important;
+  }
+}

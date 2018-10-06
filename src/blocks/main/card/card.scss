@@ -6,6 +6,7 @@
   transition:0.5s;
   // виден красный пиксель при наложении, с этим фиксом всё ок.
   margin-bottom: -1px;
+  margin-right: -1px;
   &:hover{
     box-shadow: 0 2px 6px 0 rgba(197,186,186,0.50);
     background-color: #F3F3F3;
@@ -34,22 +35,7 @@
   &:hover .icon-next{
     opacity: 1;
   }
-  .icon-close{
-    position: absolute;
-    right: 23px;
-    opacity: 0;
-    transition: 0.5s;
-    top:19px;
-    cursor:pointer;
-  }
-  .icon-next{
-    position:absolute;
-    right: 23px;
-    opacity: 0;
-    transition: 0.5s;
-    bottom: 19px;
-    cursor: pointer;
-  }
+
   &__icon{
     font-size: 23px;
   }
@@ -72,6 +58,7 @@
   &__decription{
     font-size: 24px;
     color: #333333;
+    padding-right: 40px;
   }
   &__description-2{
     font-size: 20px;
@@ -120,5 +107,43 @@
       opacity: 0.5;
     }
   }
-
+}
+@media(max-width: 450px){
+  .card{
+    padding:16px;
+    &__title{
+      font-size: 14px;
+    }
+    &_m-t{
+      margin-top:0px;
+    }
+    &__icon{
+      font-size: 16px;
+    }
+    &__icon-2{
+      font-size: 29px;
+    }
+    &__icon-3{
+      font-size: 19px;
+    }
+    &__icon-4{
+      font-size: 24px;
+    }
+    &__text{
+      font-size: 12px;
+    }
+    &__decription{
+      font-size: 18px;
+      padding-right: 0;
+    }
+    &__description-2{
+      font-size: 19px;
+    }
+    &__image{
+      height: 133px;
+    }
+    &__image-2{
+      height: 247px;
+    }
+  }
 }

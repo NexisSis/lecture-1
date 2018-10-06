@@ -26,13 +26,16 @@
     height: 53px;
     width: 53px;
     cursor:pointer;
+    background-repeat: no-repeat;
   }
   .icon-music-next{
     background-image: url('../img/player-prev.svg');
     height: 53px;
     width: 53px;
+    margin-left:30px;
     transform:rotate(180deg);
     cursor:pointer;
+    background-repeat: no-repeat;
   }
   &__volume-moment{
     background: #605757;
@@ -48,5 +51,14 @@
     width: 56%;
     background-color: rgba(216,216,216,0.30);
     border-radius: 2px;
+  }
+}
+@media(max-width: 450px){
+  .icon-music-next{
+    width: 90px!important;
+    margin-left: 0px!important;
+  }
+  .icon-music-prev{
+    width: 90px!important;
   }
 }
