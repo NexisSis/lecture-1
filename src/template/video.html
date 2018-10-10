@@ -1,18 +1,32 @@
+<!-- Video from https://bitmovin.com/mpeg-dash-hls-examples-sample-streams/ -->
 
 <div class="flex">
   <div class="video">
     <div class="video__item video__item-1">
-        <video id="video-1" class="video" controls muted autoplay></video>
+        <video id="video-1" class="video"  muted autoplay></video>
     </div>
     <div class="video__item video__item-2">
-        <video id="video-2" class="video" controls muted autoplay></video>
+        <video id="video-2" class="video"  muted autoplay></video>
     </div>
     <div class="video__item video__item-3">
-        <video id="video-3" class="video" controls muted autoplay></video>
+        <video id="video-3" class="video"  muted autoplay></video>
     </div>
     <div class="video__item video__item-4">
-        <video id="video-4" class="video" controls muted autoplay></video>
+        <video id="video-4" class="video"  muted autoplay></video>
     </div>
-    <button class="video__button o-0">Показать все камеры</button>
   </div>
 </div>
+<div class="flex flex-jc-sb o-0 video__controls">
+    <button class="video__button ">Показать все камеры</button>
+    <div>
+        <label for="video__contrast">Контраст</label>
+        <input type="range"  oninput="changeContrast(this.value)" value="100" id="video__contrast" name="contrast"
+               min="0" max="100" />
+    </div>
+    <div>
+        <label for="video__brightness">Яркость</label>
+        <input type="range" oninput="changeBrightness(this.value)" value="100"  id="video__brightness" name="contrast"
+               min="0" max="100" />
+    </div>
+</div>
+
