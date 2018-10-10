@@ -8,6 +8,7 @@
     <div class="video__item video__item-2">
         <video id="video-2" class="video"  muted autoplay></video>
     </div>
+      <div class="video__break"></div>
     <div class="video__item video__item-3">
         <video id="video-3" class="video"  muted autoplay></video>
     </div>
@@ -20,13 +21,13 @@
     <button class="video__button ">Показать все камеры</button>
     <div>
         <label for="video__contrast">Контраст</label>
-        <input type="range"  oninput="changeContrast(this.value)" value="100" id="video__contrast" name="contrast"
-               min="0" max="100" />
+        <input type="range"  oninput="changeContrast(this.value)"id="video__contrast" name="contrast"
+               min="0" max="200" />
     </div>
     <div>
         <label for="video__brightness">Яркость</label>
-        <input type="range" oninput="changeBrightness(this.value)" value="100"  id="video__brightness" name="contrast"
-               min="0" max="100" />
+        <input type="range" oninput="changeBrightness(this.value)" id="video__brightness" name="contrast"
+               min="0" max="200" />
     </div>
 </div>
 
