@@ -1,11 +1,19 @@
 .video{
+  width: 100%;
+  height:100%;
   video{
     width: 100%;
     height: 100%;
-
   }
   &__item{
     width:50%;
+    height: 25vw;
     transition:1s;
+    float: left;
+  }
+  &__button{
+    transition: 1s;
+    margin-top:10px;
+    margin-bottom: 10px;
   }
 }

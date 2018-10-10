@@ -3,6 +3,27 @@ body{
   font-family:Arial;
   padding: 0 20px;
 }
+.w-100{
+  width: 100%!important;
+}
+.h-50{
+  height: 50vw!important
+}
+.h-0{
+  height: 0!important;
+}
+.w-0{
+  width: 0!important;
+}
+.o-0{
+  opacity: 0;
+}
+.o-1{
+  opacity: 1;
+}
+.d-none{
+  display: none;
+}
 .flex{
   display: flex;
   justify-content: flex-start;
