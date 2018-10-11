@@ -3,31 +3,33 @@
 <div class="flex">
   <div class="video">
     <div class="video__item video__item-1">
-        <video id="video-1" class="video"  muted autoplay></video>
+        <video id="video-1" class="video" muted autoplay></video>
     </div>
     <div class="video__item video__item-2">
-        <video id="video-2" class="video"  muted autoplay></video>
+        <video id="video-2" class="video" muted autoplay></video>
     </div>
       <div class="video__break"></div>
     <div class="video__item video__item-3">
-        <video id="video-3" class="video"  muted autoplay></video>
+        <video id="video-3" class="video" muted autoplay></video>
     </div>
     <div class="video__item video__item-4">
-        <video id="video-4" class="video"  muted autoplay></video>
+        <video id="video-4" class="video" muted autoplay></video>
     </div>
   </div>
 </div>
 <div class="flex flex-jc-sb o-0 video__controls">
     <button class="video__button ">Показать все камеры</button>
-    <div>
+    <div class="video__control">
         <label for="video__contrast">Контраст</label>
         <input type="range"  onchange="changeContrast(this.value)" oninput="changeContrast(this.value)" id="video__contrast" name="contrast"
                min="0" max="200" />
     </div>
-    <div>
+    <div class="video__control">
         <label for="video__brightness">Яркость</label>
         <input type="range"  onchange="changeBrightness(this.value)" oninput="changeBrightness(this.value)" id="video__brightness" name="contrast"
                min="0" max="200" />
     </div>
+    <div class="video__volume">
+        <div class="video__volume-line"></div>
+    </div>
 </div>
-
