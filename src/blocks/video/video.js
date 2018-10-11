@@ -17,23 +17,22 @@ initVideo(
 
 
 //opened video
-var videoNum;
+var videoNum =1;
 
 var videoFilters = initVideoFilters();
 
 if($(document).width()>450) {
-    videoCssAnimation();
+    videoAnimation();
 }else{
     setVideoDefaultCss();
 }
 
 $( window ).resize(function() {
   if($(document).width()>450){
-      videoCssAnimation();
+      videoAnimation();
   }else{
       setVideoDefaultCss();
   }
 });
 
 
-var audioContext = initAudioAnalyzer();
