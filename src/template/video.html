@@ -21,12 +21,12 @@
     <button class="video__button ">Показать все камеры</button>
     <div>
         <label for="video__contrast">Контраст</label>
-        <input type="range"  oninput="changeContrast(this.value)"id="video__contrast" name="contrast"
+        <input type="range"  onchange="changeContrast(this.value)" oninput="changeContrast(this.value)" id="video__contrast" name="contrast"
                min="0" max="200" />
     </div>
     <div>
         <label for="video__brightness">Яркость</label>
-        <input type="range" oninput="changeBrightness(this.value)" id="video__brightness" name="contrast"
+        <input type="range"  onchange="changeBrightness(this.value)" oninput="changeBrightness(this.value)" id="video__brightness" name="contrast"
                min="0" max="200" />
     </div>
 </div>

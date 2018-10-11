@@ -14,6 +14,39 @@ function initVideo(video, url) {
         });
     }
 }
+
+//changed value of video controls after open another video
+function videoControlsChangeValue(num){
+    if(videoFilters[num-1]){
+        console.log(videoFilters[num-1]);
+        if(videoFilters[num-1].contrast || videoFilters[num-1].contrast == 0 ){
+            console.log(videoFilters[num-1].contrast*100);
+            $('#video__contrast').val(videoFilters[num-1].contrast*100);
+            console.log('val changed');
+        }
+        else{
+            console.log('100');
+            $('#video__contrast').val(100);
+        }
+
+        if(videoFilters[num-1].brightness || videoFilters[num-1].brightness == 0){
+            $('#video__brightness').val(videoFilters[num-1].brightness*100);
+        }
+        else{
+            $('#video__brightness').val(100);
+        }
+    }
+}
+function initVideoFilters(){
+    var result = {};
+    var count = $('.video__item').length;
+    for(var i=0;i<count;i++){
+        result[i]={};
+        result[i].contrast=1;
+        result[i].brightness=1;
+    }
+    return result;
+}
 function videoCssAnimation(){
     $('.video__item-1').click(function(){
         $('.video__item-1').addClass('h-45 w-100');
@@ -22,6 +55,7 @@ function videoCssAnimation(){
         $('.video__item-4').addClass('h-0 o-0');
         $('.video__controls').addClass('o-1');
         videoNum = 1;
+        videoControlsChangeValue(videoNum);
     });
     $('.video__item-2').click(function(){
         $('.video__item-1').addClass('h-45 w-0 o-0' );
@@ -30,6 +64,7 @@ function videoCssAnimation(){
         $('.video__item-4').addClass('h-0 o-0');
         $('.video__controls').addClass('o-1');
         videoNum = 2;
+        videoControlsChangeValue(videoNum);
     });
     $('.video__item-3').click(function(){
         $('.video__item-1').addClass('h-0 o-0');
@@ -38,6 +73,7 @@ function videoCssAnimation(){
         $('.video__item-4').addClass('w-0 h-45 o-0');
         $('.video__controls').addClass('o-1');
         videoNum = 3;
+        videoControlsChangeValue(videoNum);
     });
 
     $('.video__item-4').click(function(){
@@ -47,6 +83,7 @@ function videoCssAnimation(){
         $('.video__item-4').addClass('w-100 h-45');
         $('.video__controls').addClass('o-1');
         videoNum = 4;
+        videoControlsChangeValue(videoNum);
     });
 
     //show all videos animation
@@ -61,9 +98,17 @@ function videoCssAnimation(){
 }
 function changeContrast(val){
     if(videoNum){
+
         var itemClassName = '.video__item-'+videoNum;
         var cssContract='contrast('+val/100+')';
         $(itemClassName).css('filter',cssContract);
+
+        //save filters
+        if(!videoFilters){
+            videoFilters = initVideoFilters();
+        }
+        videoFilters[videoNum-1].contrast = val/100;
+
     }
 }
 function changeBrightness(val){
@@ -71,6 +116,12 @@ function changeBrightness(val){
         var itemClassName = '.video__item-'+videoNum;
         var cssBrightness='brightness('+val/100+')';
         $(itemClassName).css('filter',cssBrightness);
+
+        //save filters
+        if(!videoFilters){
+            videoFilters = initVideoFilters();
+        }
+        videoFilters[videoNum-1].brightness = val/100;
     }
 }
 initVideo(
@@ -90,7 +141,11 @@ initVideo(
     'http://www.streambox.fr/playlists/test_001/stream.m3u8'
 );
 
+//init
 var videoNum;
+console.log('init');
+var videoFilters = initVideoFilters();
+
 if($(document).width()>450) {
     videoCssAnimation();
 }
@@ -100,3 +155,4 @@ $( window ).resize(function() {
       videoCssAnimation();
   }
 });
+
