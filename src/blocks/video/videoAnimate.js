@@ -58,13 +58,21 @@ function videoAnimation(){
         audioAnalyzer(videoNum);
     });
 
-    //show all videos animation
+
     $('.video__button').click(function(){
         setVideoDefaultCss();
         document.getElementById("video-1").play();
         document.getElementById("video-2").play();
         document.getElementById("video-3").play();
         document.getElementById("video-4").play();
+        $("#video-1").prop("controls",false);
+        $("#video-1").prop("muted",true);
+        $("#video-2").prop("controls",false);
+        $("#video-2").prop("muted",true);
+        $("#video-3").prop("controls",false);
+        $("#video-3").prop("muted",true);
+        $("#video-4").prop("controls",false);
+        $("#video-4").prop("muted",true);
         videoNum = null;
     });
 }
