@@ -8,13 +8,12 @@ initVideo(
 );
 initVideo(
     document.getElementById('video-3'),
-    'http://184.72.239.149/vod/smil:BigBuckBunny.smil/playlist.m3u8'
+    'https://www.streambox.fr/playlists/test_001/stream.m3u8'
 );
 initVideo(
     document.getElementById('video-4'),
-    'http://www.streambox.fr/playlists/test_001/stream.m3u8'
+    'https://mnmedias.api.telequebec.tv/m3u8/29880.m3u8'
 );
-
 
 //opened video
 var videoNum =1;
