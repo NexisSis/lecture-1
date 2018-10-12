@@ -1,4 +1,13 @@
 function videoAnimation(){
+
+    //check if audio analyzer was init
+    var audioAnalyzerChecker = [0,0,0,0];
+
+    //create audioContext
+    var audioContext = audioContext || initAudioAnalyzer();
+
+    var audioSrc = {};
+
     $('.video__item-1').click(function(){
         $('.video__item-1').addClass('h-40 w-100');
         $('.video__item-2').addClass('h-40 w-0 o-0' );
@@ -11,7 +20,7 @@ function videoAnimation(){
         document.getElementById("video-4").pause();
         videoNum = 1;
         videoControlsChangeValue(videoNum);
-        audioAnalyzer(videoNum);
+        audioAnalyzerSetup(videoNum,audioContext,audioAnalyzerChecker,audioSrc);
     });
     $('.video__item-2').click(function(){
         $('.video__item-1').addClass('h-40 w-0 o-0' );
@@ -25,7 +34,7 @@ function videoAnimation(){
         document.getElementById("video-4").pause();
         videoNum = 2;
         videoControlsChangeValue(videoNum);
-        audioAnalyzer(videoNum);
+        audioAnalyzerSetup(videoNum,audioContext,audioAnalyzerChecker,audioSrc);
 
     });
     $('.video__item-3').click(function(){
@@ -40,7 +49,7 @@ function videoAnimation(){
         document.getElementById("video-4").pause();
         videoNum = 3;
         videoControlsChangeValue(videoNum);
-        audioAnalyzer(videoNum);
+        audioAnalyzerSetup(videoNum,audioContext,audioAnalyzerChecker,audioSrc);
     });
 
     $('.video__item-4').click(function(){
@@ -55,7 +64,7 @@ function videoAnimation(){
         document.getElementById("video-3").pause();
         videoNum = 4;
         videoControlsChangeValue(videoNum);
-        audioAnalyzer(videoNum);
+        audioAnalyzerSetup(videoNum,audioContext,audioAnalyzerChecker,audioSrc);
     });
 
 
