@@ -14,7 +14,11 @@ var gulp = require('gulp'),
     minifyHTML = require('gulp-minify-html'),
     cache = require('gulp-cache'),
     concat = require('gulp-concat'),
-    flatten = require('gulp-flatten');
+    flatten = require('gulp-flatten'),
+    ts = require("gulp-typescript");
+
+var tsProject = ts.createProject("./tsconfig.json");
+
 
 var path = {
     build: {
@@ -26,14 +30,14 @@ var path = {
     },
     src: {
         html: 'src/*.html',
-        js: 'src/blocks/**/*.js',
+        js: 'src/blocks/**/*.ts',
         style: 'src/blocks/**/*.scss',
         img: 'src/blocks/**/*.{jpg,png,svg,gif}',
         fonts: 'src/fonts/**/*.*'
     },
     watch: {
         html: 'src/**/*.html',
-        js: 'src/blocks/**/*.js',
+        js: 'src/blocks/**/*.ts',
         style: 'src/blocks/**/*.scss',
         img: 'src/blocks/**/*.*',
         fonts: 'src/fonts/**/*.*'
@@ -61,14 +65,17 @@ gulp.task('html:build', function () {
         .pipe(reload({stream: true}));
 });
 gulp.task('js:build', function () {
-    gulp.src(path.src.js)
-        .pipe(rigger())
-        .pipe(sourcemaps.init())
-        .pipe(uglify())
-        .pipe(concat('main.js'))
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest(path.build.js))
-        .pipe(reload({stream: true}));
+    return tsProject.src()
+        .pipe(tsProject())
+        .js.pipe(gulp.dest(path.build.js));
+    // gulp.src(path.src.js)
+    //     .pipe(rigger())
+    //     .pipe(sourcemaps.init())
+    //     .pipe(uglify())
+    //     .pipe(concat('main.js'))
+    //     .pipe(sourcemaps.write())
+    //     .pipe(gulp.dest(path.build.js))
+    //     .pipe(reload({stream: true}));
 });
 gulp.task('style:build', function () {
     gulp.src(path.src.style)

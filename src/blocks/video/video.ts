@@ -1,5 +1,9 @@
+let video : HTMLVideoElement;
+video = document.getElementById('video-1');
+
+
 initVideo(
-    document.getElementById('video-1'),
+    video,
     'https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8'
 );
 initVideo(
@@ -20,14 +24,16 @@ var videoNum =1;
 
 var videoFilters = initVideoFilters();
 
-if($(document).width()>450) {
+let width = $(window).width() || null;
+
+if(width && width>450) {
     videoAnimation();
 }else{
     setVideoDefaultCss();
 }
 
 $( window ).resize(function() {
-  if($(document).width()>450){
+  if(width && width>450){
       videoAnimation();
   }else{
       setVideoDefaultCss();

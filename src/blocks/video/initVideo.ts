@@ -1,7 +1,12 @@
 //Video from https://bitmovin.com/mpeg-dash-hls-examples-sample-streams/
-function initVideo(video, url) {
+function initVideo(video:HTMLVideoElement, url:string) {
+
+    if(!video){
+        return;
+    }
+
     if (Hls.isSupported()) {
-        var hls = new Hls();
+        let hls = new Hls();
         hls.loadSource(url);
         hls.attachMedia(video);
         hls.on(Hls.Events.MANIFEST_PARSED, function () {
