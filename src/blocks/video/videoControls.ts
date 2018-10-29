@@ -1,5 +1,5 @@
 //changed value of video controls after open another video
-function videoControlsChangeValue(num){
+function videoControlsChangeValue(num: number){
     if(videoFilters[num-1]){
         if(videoFilters[num-1].contrast || videoFilters[num-1].contrast == 0 ){
             $('#video__contrast').val(videoFilters[num-1].contrast*100);
@@ -16,10 +16,10 @@ function videoControlsChangeValue(num){
         }
     }
 }
-function changeContrast(val){
+function changeContrast(val: number){
     if(videoNum){
-        var itemClassName = '.video__item-'+videoNum;
-        var cssContract='contrast('+val/100+')';
+        let itemClassName = '.video__item-'+videoNum;
+        let cssContract='contrast('+val/100+')';
         $(itemClassName).css('filter',cssContract);
 
         //save filters
@@ -30,10 +30,10 @@ function changeContrast(val){
 
     }
 }
-function changeBrightness(val){
+function changeBrightness(val: number){
     if(videoNum){
-        var itemClassName = '.video__item-'+videoNum;
-        var cssBrightness='brightness('+val/100+')';
+        let itemClassName = '.video__item-'+videoNum;
+        let cssBrightness='brightness('+val/100+')';
         $(itemClassName).css('filter',cssBrightness);
 
         //save filters

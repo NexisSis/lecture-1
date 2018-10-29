@@ -1,7 +1,7 @@
 function initAudioAnalyzer(){
     var audioContext = null;
     try {
-        window.AudioContext = window.AudioContext||window.webkitAudioContext;
+        this.window.AudioContext = this.window.AudioContext || this.window.webkitAudioContext!;
         audioContext = new AudioContext();
     }
     catch(e) {

@@ -1,12 +1,14 @@
 //Video from https://bitmovin.com/mpeg-dash-hls-examples-sample-streams/
-function initVideo(video:HTMLVideoElement, url:string) {
+function initVideo(video: HTMLVideoElement | null, url:string) {
 
     if(!video){
+        console.log(video);
+        console.log('empty video');
         return;
     }
 
     if (Hls.isSupported()) {
-        let hls = new Hls();
+        const hls = new Hls();
         hls.loadSource(url);
         hls.attachMedia(video);
         hls.on(Hls.Events.MANIFEST_PARSED, function () {
@@ -19,9 +21,17 @@ function initVideo(video:HTMLVideoElement, url:string) {
         });
     }
 }
+// interface ResultValue {
+//     contrast?: number;
+//     brightness?: number;
+// }
+
 function initVideoFilters(){
-    var result = {};
-    var count = $('.video__item').length;
+
+    // let result : ResultValue;
+    let result = {};
+
+    const count = $('.video__item').length;
     for(var i=0;i<count;i++){
         result[i]={};
         result[i].contrast=1;
