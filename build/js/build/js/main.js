@@ -18,6 +18,103 @@ $(document).ready(function () {
         }
     }
 });
+document.addEventListener("DOMContentLoaded", function (event) {
+    var image = document.querySelector('.image');
+    //stackoverflow fix
+    var parentNode = image.parentNode;
+    // что б не таскалась картинка
+    image.addEventListener('dragstart', function (event) {
+        event.preventDefault();
+    });
+    var stateImg = {
+        moveMin: -(image.offsetWidth - parentNode.offsetWidth),
+        left: 0,
+        moveMax: 0,
+        zoomMin: 100,
+        zoom: 100,
+        zoomMax: 300
+    };
+    var pointerNow = {};
+    var isMove = false;
+    image.addEventListener('pointerdown', function (event) {
+        pointerNow[event.pointerId] = event;
+        isMove = true;
+    });
+    var calcDistance = function (e1, e2) {
+        var x1 = e1.clientX, y1 = e1.clientY;
+        var x2 = e2.clientX, y2 = e2.clientY;
+        var distance = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+        return distance;
+    };
+    var move = function (val) {
+        var moveMin = stateImg.moveMin, moveMax = stateImg.moveMax;
+        stateImg.left += val;
+        if (stateImg.left < moveMin) {
+            stateImg.left = moveMin;
+        }
+        else if (stateImg.left > moveMax) {
+            stateImg.left = moveMax;
+        }
+        image.style.left = stateImg.left + 'px';
+        document.querySelector('.left').innerText = (-(Math.round(stateImg.left * 100) / 100)).toString();
+    };
+    var calcAngle = function (e1, e2) {
+        var x1 = e1.clientX, y1 = e1.clientY;
+        var x2 = e2.clientX, y2 = e2.clientY;
+        var radius = Math.atan2(x2 - x1, y2 - y1);
+        var angle = 180 + Math.round(radius * 180 / Math.PI);
+        return angle;
+    };
+    image.addEventListener('pointermove', function (e) {
+        var pointersCount = Object.keys(pointerNow).length;
+        if (pointersCount === 1 && pointerNow[e.pointerId] && isMove) {
+            // calc distance
+            move(e.clientX - pointerNow[e.pointerId].clientX);
+            pointerNow[e.pointerId] = e;
+        }
+        else if (pointersCount === 2) {
+            pointerNow[e.pointerId] = e;
+            var events = Object.values(pointerNow);
+            var distanceDifferent = calcDistance(events[0], events[1]) - stateImg.zoom;
+            var zoomMin = stateImg.zoomMin, zoomMax = stateImg.zoomMax;
+            var zoom = void 0;
+            if (distanceDifferent < 0) {
+                zoom = Math.max(stateImg.zoom + distanceDifferent, zoomMin);
+            }
+            else {
+                zoom = Math.min(stateImg.zoom + distanceDifferent, zoomMax);
+            }
+            stateImg.zoom = zoom;
+            image.style.height = zoom + '%';
+            document.querySelector('.zoom').innerText = (Math.round(zoom * 100) / 100).toString();
+        }
+    });
+    image.addEventListener('pointerup', function (event) {
+        delete pointerNow[event.pointerId];
+        isMove = false;
+    });
+    image.addEventListener('pointerleave', function (event) {
+        delete pointerNow[event.pointerId];
+        isMove = false;
+    });
+    // сделал после просмотра разбора
+    var fakePointer = document.querySelector('.fake-pointer');
+    image.addEventListener('dblclick', function (event) {
+        if (pointerNow['fake']) {
+            delete pointerNow['fake'];
+            fakePointer.style.left = '0';
+            fakePointer.style.top = '0';
+            fakePointer.classList.remove('active');
+        }
+        else {
+            pointerNow['fake'] = event;
+            width = fakePointer.offsetWidth;
+            fakePointer.classList.add('active');
+            fakePointer.style.left = (stateImg.left + event.offsetX - width / 2).toString();
+            fakePointer.style.top = (event.offsetY - width / 2).toString();
+        }
+    });
+});
 function audioAnalyzer(videoNum, audioContext, audioSrc) {
     if (audioContext) {
         if (analyser == undefined) {
