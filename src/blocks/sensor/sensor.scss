@@ -1,0 +1,34 @@
+.container {
+    width: 600px;
+    margin-left:auto;
+    margin-right: auto;
+}
+.image-container {
+    overflow: hidden;
+    position: relative;
+    height: 500px;
+}
+
+.image {
+    position: absolute;
+    height: 100%;
+    touch-action: none;
+}
+
+.fake-pointer {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    pointer-events: none;
+    background-color: darkgrey;
+}
+
+.fake-pointer.active {
+    background-color: pink;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
