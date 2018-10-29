@@ -1,4 +1,4 @@
-function audioAnalyzer(videoNum ,audioContext ,audioSrc){
+function audioAnalyzer(videoNum:number,audioContext:AudioContext ,audioSrc:MediaStreamAudioSourceNode){
     if(audioContext) {
         if(analyser == undefined){
             var analyser = audioContext.createAnalyser();
@@ -29,9 +29,9 @@ function audioAnalyzer(videoNum ,audioContext ,audioSrc){
         console.log('audioContext is null');
     }
 }
-function audioAnalyzerSetup(num,context,checker,src){
+function audioAnalyzerSetup(num:number,context:AudioContext,checker:Array<number>,src:object){
     if(checker[num-1] == 0){
-        let audio = document.getElementById('video-'+num);
+        let audio = document.querySelector<HTMLMediaElement>('#video-'+num);
         if(audio){
             src[num-1]  = context.createMediaElementSource(audio);
             audioAnalyzer(num,context,src[num-1]);

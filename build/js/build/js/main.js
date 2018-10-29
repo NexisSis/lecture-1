@@ -58,13 +58,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         image.style.left = stateImg.left + 'px';
         document.querySelector('.left').innerText = (-(Math.round(stateImg.left * 100) / 100)).toString();
     };
-    var calcAngle = function (e1, e2) {
-        var x1 = e1.clientX, y1 = e1.clientY;
-        var x2 = e2.clientX, y2 = e2.clientY;
-        var radius = Math.atan2(x2 - x1, y2 - y1);
-        var angle = 180 + Math.round(radius * 180 / Math.PI);
-        return angle;
-    };
     image.addEventListener('pointermove', function (e) {
         var pointersCount = Object.keys(pointerNow).length;
         if (pointersCount === 1 && pointerNow[e.pointerId] && isMove) {
