@@ -139,7 +139,7 @@ function audioAnalyzer(videoNum, audioContext, audioSrc) {
 }
 function audioAnalyzerSetup(num, context, checker, src) {
     if (checker[num - 1] == 0) {
-        var audio = document.getElementById('video-' + num);
+        var audio = document.querySelector('#video-' + num);
         if (audio) {
             src[num - 1] = context.createMediaElementSource(audio);
             audioAnalyzer(num, context, src[num - 1]);
