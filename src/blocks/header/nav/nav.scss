@@ -5,9 +5,10 @@
   &__item{
     text-decoration: none;
     margin-left:32px;
-    &:first-child{
-      margin-left: 17px;
-    }
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
   }
   &__text{
     color: #333;

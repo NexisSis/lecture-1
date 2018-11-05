@@ -11,13 +11,24 @@
 <body>
 
 //= template/header.html
-//= template/main.html
+
+<div class="index index__main active">
+    //= template/main.html
+</div>
+<div class="index index__sensor">
+    //= template/sensor.html
+</div>
+<div class="index index__video">
+    //= template/video.html
+</div>
+
 //= template/footer.html
 
 <script
         src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
         crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

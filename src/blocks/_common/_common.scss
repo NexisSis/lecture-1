@@ -21,6 +21,9 @@ body{
 .o-1{
   opacity: 1;
 }
+.active{
+  display: block;
+}
 .d-none{
   display: none;
 }
@@ -34,6 +37,9 @@ body{
 }
 .flex-wrap-d{
   flex-wrap: wrap;
+}
+.flex-jc-start{
+  justify-content: flex-start;
 }
 .flex-jc-sb{
   justify-content: space-between;

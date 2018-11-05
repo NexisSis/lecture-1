@@ -67,15 +67,16 @@ gulp.task('html:build', function () {
 gulp.task('js:build', function () {
     return tsProject.src()
         .pipe(tsProject())
-        .js.pipe(gulp.dest(path.build.js));
+        .pipe(rigger())
+        .pipe(sourcemaps.init())
+        // .pipe(uglify())
+        .pipe(concat('main.js'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(path.build.js))
+        .pipe(reload({stream: true}));
+        // .js.pipe(gulp.dest(path.build.js));
     // gulp.src(path.src.js)
-    //     .pipe(rigger())
-    //     .pipe(sourcemaps.init())
-    //     .pipe(uglify())
-    //     .pipe(concat('main.js'))
-    //     .pipe(sourcemaps.write())
-    //     .pipe(gulp.dest(path.build.js))
-    //     .pipe(reload({stream: true}));
+
 });
 gulp.task('style:build', function () {
     gulp.src(path.src.style)

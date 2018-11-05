@@ -1,6 +1,6 @@
 <div class="container">
-    <div class="header flex flex-jc-sb-tablet">
-        <a href="index.html">
+    <div class="header flex flex-jc-start flex-jc-sb-tablet ">
+        <a href="index.html" onclick="this.userClickEventChangePage('main')">
             <img class="header__logo" src="img/logo.svg" title="Яндекс Дом логотип" alt="Яндекс дом логотип">
         </a>
         <div class="nav__mobile">
@@ -9,12 +9,12 @@
             <div></div>
         </div>
         <div class="nav flex flex-jc-sb">
-            <a class="nav__item" href="#"><span class="nav__text">События</span></a>
-            <a class="nav__item" href="#"><span class="nav__text">Сводка</span></a>
-            <a class="nav__item" href="#"><span class="nav__text">Устройства</span></a>
-            <a class="nav__item" href="#"><span class="nav__text">Сценарии</span></a>
-            <a class="nav__item" href="lecture-2.html"><span class="nav__text">Сенсорныый ввод</span></a>
-            <a class="nav__item" href="lecture-4.html"><span class="nav__text">Камеры наблюдения</span></a>
+            <button class="nav__item" href="#"><span class="nav__text">События</span></button>
+            <button class="nav__item" href="#"><span class="nav__text">Сводка</span></button>
+            <button class="nav__item" href="#"><span class="nav__text">Устройства</span></button>
+            <button class="nav__item" href="#"><span class="nav__text">Сценарии</span></button>
+            <button class="nav__item"><span class="nav__text" onclick="this.userClickEventChangePage('sensor')">Сенсорныый ввод</span></button>
+            <button class="nav__item" href="lecture-4.html"><span class="nav__text" onclick="this.userClickEventChangePage('video')">Камеры наблюдения</span></button>
             </ul>
         </div>
     </div>
