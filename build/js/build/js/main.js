@@ -1,3 +1,37 @@
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+define("flux/MyDispatcher", ["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var MyDispatcher = /** @class */ (function () {
+        function MyDispatcher() {
+            this.callbacks = [];
+        }
+        MyDispatcher.prototype.dispatch = function (payload) {
+            for (var i = 0; i < this.callbacks.length; i++) {
+                this.callbacks[i](payload);
+            }
+        };
+        MyDispatcher.prototype.register = function (callback) {
+            this.callbacks.push(callback);
+        };
+        return MyDispatcher;
+    }());
+    exports.default = MyDispatcher;
+});
+define("blocks/main/main", ["require", "exports", "flux/MyDispatcher"], function (require, exports, MyDispatcher_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    MyDispatcher_1 = __importDefault(MyDispatcher_1);
+    function changePage(n) {
+        var dispatcher = new MyDispatcher_1.default();
+        dispatcher.dispatch({
+            eventName: 'change-page',
+            pageName: { name: n }
+        });
+    }
+});
 $(document).ready(function () {
     var firstSongName = $('.player__song').text();
     cutSongName(firstSongName);
@@ -354,3 +388,9 @@ function changeBrightness(val) {
         videoFilters[videoNum - 1].brightness = val / 100;
     }
 }
+var MyStore = {
+    currentPage: '',
+    getAll: function () {
+        return this.currentPage;
+    }
+};
